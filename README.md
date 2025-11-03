@@ -34,7 +34,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
     * R1 ist immer **3.3kΩ**.
 5.  **Impuls-Erfassung:** 4 Reißzwecken wurden in das Laufrad eingedrückt und verklebt. Der induktive Sensor erfasst diese Metallstifte und erzeugt **4 Impulse pro Umdrehung**.
 
-![Schaltplan](hardware/pcb/Stromplan.png)
+![Schaltplan](Hardware/PCB/Stromplan.png)
 
 ---
 
@@ -50,8 +50,8 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
     * Schraubterminal (3-Pin) für Sensoranschluss (H1)
     * Stiftleisten für ESP und Regler
     * 4x Reißzwecken
-* **Platine:** Custom PCB (Gerber/Design-Dateien in `/hardware/pcb/`)
-* **Gehäuse:** Custom 3D-Druck (STL-Dateien in `/hardware/case/`)
+* **Platine:** Custom PCB (Gerber/Design-Dateien in `/Hardware/PCB/`)
+* **Gehäuse:** Custom 3D-Druck (STL-Dateien in `/Hardware/Case/`)
 
 ---
 
@@ -59,7 +59,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
 
 ### 1. ESPHome
 
-Der Code für den ESP32-C6 befindet sich in `software/esphome/hamsterrad-esphome.yaml`.
+Der Code für den ESP32-C6 befindet sich in `Software/ESPHome/hamsterrad-esphome.yaml`.
 
 1.  **Secrets:** Diese Konfiguration verwendet Secrets! Stelle sicher, dass du deine `secrets.yaml` (im ESPHome Hauptverzeichnis) mit den WLAN-Daten, einem API-Key und einem OTA-Passwort füllst, die in der `hamsterrad-esphome.yaml` referenziert werden.
     ```yaml
