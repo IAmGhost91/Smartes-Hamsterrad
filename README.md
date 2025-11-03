@@ -34,7 +34,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
     * R1 ist immer **3.3kΩ**.
 5.  **Impuls-Erfassung:** 4 Reißzwecken wurden in das Laufrad eingedrückt und verklebt. Der induktive Sensor erfasst diese Metallstifte und erzeugt **4 Impulse pro Umdrehung**.
 
-![Schaltplan](Hardware/PCB/Stromplan.png)
+![Schaltplan](Platine : PCB/Platine bestückt.jpg)
 
 ---
 
