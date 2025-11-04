@@ -37,13 +37,16 @@ time:
     update_interval: 60min 
     # Aktion, die jeden Tag um 20:00 Uhr ausgeführt wird
     on_time:
-      - time: "20:00:00"
+      # Trigger: Jeden Tag um 20:00:00 Uhr
+      - seconds: 0
+        minutes: 0
+        hours: 20
+        # Die Aktionen, die dann ausgeführt werden:
         then:
           - logger.log: "Tageszähler wird automatisch zurückgesetzt (20:00 Uhr)."
-          # Setzt die globale Variable zurück
           - lambda: 'id(hamsterrad_impulse_taglich) = 0;'
-          # WICHTIG: Sende sofort den neuen Wert (0) an Home Assistant
           - component.update: distanz_taglich
+
 
 ######################
 # GLOBALE VARIABLEN & KONSTANTEN
@@ -56,7 +59,7 @@ globals:
     initial_value: '0'
   - id: hamsterrad_impulse_taglich
     type: int
-    restore_value: yes
+    restore_value: no
     initial_value: '0'
   - id: hamsterrad_zaehler_intervall
     type: int
@@ -90,6 +93,7 @@ button:
     on_press:
       - lambda: 'id(hamsterrad_impulse_taglich) = 0;'
       - component.update: distanz_taglich
+
 
 ######################
 # SENSOREN
@@ -175,6 +179,30 @@ sensor:
     lambda: |-
       return (float)id(hamsterrad_impulse_gesamt);
     accuracy_decimals: 0
+
+
+######################
+# TEXT SENSOREN
+######################
+
+text_sensor:
+  # Sensor für die interne ESP-Uhrzeit (zum Debuggen)
+  - platform: template
+    name: "Hamsterrad Uhrzeit"
+    id: hamsterrad_uhrzeit
+    icon: "mdi:clock-check-outline"
+    # Aktualisiert sich alle 30 Sekunden
+    update_interval: 30s 
+    lambda: |-
+      // Greift auf deine Uhr-Komponente "ha_time" zu
+      if (id(ha_time).now().is_valid()) {
+        // Formatiert die Zeit als Text (std::string)
+        return id(ha_time).now().strftime("%Y-%m-%d %H:%M:%S");
+      } else {
+        // Zeigt "N/A" an, wenn die Zeit noch nicht synchronisiert wurde
+        return std::string("N/A");
+      }
+
 
 ######################
 # LICHT & IMPULS-ZÄHLER
