@@ -29,6 +29,22 @@ web_server:
   port: 80
   version: 3
 
+# Komponente für die Uhrzeit (synchronisiert sich mit Home Assistant)
+time:
+  - platform: homeassistant
+    id: ha_time
+    # Jede Stunde die Zeit von HA holen, falls die Verbindung getrennt war
+    update_interval: 60min 
+    # Aktion, die jeden Tag um 20:00 Uhr ausgeführt wird
+    on_time:
+      - time: "20:00:00"
+        then:
+          - logger.log: "Tageszähler wird automatisch zurückgesetzt (20:00 Uhr)."
+          # Setzt die globale Variable zurück
+          - lambda: 'id(hamsterrad_impulse_taglich) = 0;'
+          # WICHTIG: Sende sofort den neuen Wert (0) an Home Assistant
+          - component.update: distanz_taglich
+
 ######################
 # GLOBALE VARIABLEN & KONSTANTEN
 ######################
@@ -40,9 +56,8 @@ globals:
     initial_value: '0'
   - id: hamsterrad_impulse_taglich
     type: int
-    restore_value: no
+    restore_value: yes
     initial_value: '0'
-  # OPTIMIERT: Datentyp auf int geändert, da nur ganze Impulse gezählt werden
   - id: hamsterrad_zaehler_intervall
     type: int
     initial_value: '0'
@@ -50,7 +65,6 @@ globals:
     type: float
     initial_value: '(${rad_durchmesser_cm} / 100.0) * M_PI'
 
-# ENTFERNT: Der separate interval-Block wird nicht mehr benötigt.
 
 ######################
 # BUTTONS FÜR HOME ASSISTANT
@@ -61,8 +75,7 @@ button:
   - platform: template
     name: "Gesamtzähler Zurücksetzen"
     icon: "mdi:delete-sweep"
-    # OPTIMIERT: 'internal: true' entfernt, damit der Button in HA sichtbar ist.
-    # Zusätzliche Updates für sofortige Aktualisierung aller abhängigen Sensoren.
+    internal: true
     on_press:
       - lambda: 'id(hamsterrad_impulse_gesamt) = 0;'
       - component.update: umdrehungen_gesamt_sensor
@@ -73,6 +86,7 @@ button:
   - platform: template
     name: "Tageszähler Zurücksetzen"
     icon: "mdi:delete-clock"
+    internal: true
     on_press:
       - lambda: 'id(hamsterrad_impulse_taglich) = 0;'
       - component.update: distanz_taglich
