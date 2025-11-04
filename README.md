@@ -102,7 +102,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
 
 | Testaufbau in der Küche | Bestückte Platine (V2.0) | Platine im 3D-Gehäuse |
 | :---: | :---: | :---: |
-| ![Testaufbau](Media/Test-Aufbau.jpg) | ![Platine mit Gehäuse](Gehäuse-Druck/Platine%20mit%203D%20Gehäuse.jpg) | ![3D Gehäuse](Gehäuse%20%3A%203D%20Druck/3D%20Gehäues.jpg) |
+| ![Testaufbau](Media/Test-Aufbau.jpg) | ![Platine mit Gehäuse](Gehäuse-3D-Druck/Platine-mit-3D-Gehäuse.jpg) | ![3D Gehäuse](Gehäuse-3D-Druck/Gehäuse-geschlossen.jpg) |
 
 
 ---
