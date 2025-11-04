@@ -81,7 +81,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
     * R1 ist immer **3.3kΩ**.
 5.  **Impuls-Erfassung:** 4 Reißzwecken wurden in das Laufrad eingedrückt und verklebt. Der induktive Sensor erfasst diese Metallstifte und erzeugt **4 Impulse pro Umdrehung**.
 
-<img src="Platine%20%3A%20PCB/Stromplan.png" alt="Stromplan" width="600" />
+<img src="Platine-PCB/Stromplan.png" alt="Stromplan" width="600" />
 
 ---
 
@@ -102,7 +102,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
 
 | Testaufbau in der Küche | Bestückte Platine (V2.0) | Platine im 3D-Gehäuse |
 | :---: | :---: | :---: |
-| ![Testaufbau](Media/Test%20Aufbau.jpg) | ![Platine mit Gehäuse](Gehäuse%20%3A%203D%20Druck/Platine%20mit%203D%20Gehäuse.jpg) | ![3D Gehäuse](Gehäuse%20%3A%203D%20Druck/3D%20Gehäues.jpg) |
+| ![Testaufbau](Media/Test-Aufbau.jpg) | ![Platine mit Gehäuse](Gehäuse-Druck/Platine%20mit%203D%20Gehäuse.jpg) | ![3D Gehäuse](Gehäuse%20%3A%203D%20Druck/3D%20Gehäues.jpg) |
 
 
 ---
