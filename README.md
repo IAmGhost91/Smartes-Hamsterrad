@@ -97,8 +97,8 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
     * Schraubterminal (3-Pin) für Sensoranschluss (H1)
     * Stiftleisten für ESP und Regler
     * 4x Reißzwecken
-* **Platine:** Custom PCB (Gerber/Design-Dateien in `/Platine%20%3A%20PCB/`)
-* **Gehäuse:** Custom 3D-Druck (STL-Dateien in `/Gehäuse%20%3A%203D%20Druck/`)
+* **Platine:** Custom PCB (Gerber/Design-Dateien in `/Platine-PCB/`)
+* **Gehäuse:** Custom 3D-Druck (STL-Dateien in `/Gehäuse-3D-Druck/`)
 
 | Testaufbau in der Küche | Bestückte Platine (V2.0) | Platine im 3D-Gehäuse |
 | :---: | :---: | :---: |
@@ -111,7 +111,7 @@ Das Herzstück des Projekts ist eine custom Platine, die die Stromversorgung und
 
 ### 1. ESPHome
 
-Der Code für den ESP32-C6 befindet sich in `Software/ESPHome/hamsterrad-esphome.yaml`.
+Der Code für den ESP32-C6 befindet sich in `Software/ESPHome-Code`.
 
 1.  **Secrets:** Diese Konfiguration verwendet Secrets! Stelle sicher, dass du deine `secrets.yaml` (im ESPHome Hauptverzeichnis) mit den WLAN-Daten, einem API-Key und einem OTA-Passwort füllst, die in der `hamsterrad-esphome.yaml` referenziert werden.
     ```yaml
@@ -126,7 +126,7 @@ Der Code für den ESP32-C6 befindet sich in `Software/ESPHome/hamsterrad-esphome
 
 ### 2. Home Assistant
 
-Der Code für die Lovelace-Karte befindet sich in `software/home-assistant/Karte Home Assistant Code.rtf`.
+Der Code für die Lovelace-Karte befindet sich in `Software/Home-Assistant-Dashboard-Code`.
 
 1.  **Helfer-Entitäten:** Die Karte ist auf diverse Helfer und Sensoren angewiesen, die du in Home Assistant anlegen musst (z.B. unter "Helfer" in den Einstellungen):
     * `sensor.hamsterrad_geschwindigkeit_max_12h` (z.B. über einen `max` Hilfssensor)
