@@ -6,7 +6,7 @@ Willkommen beim Projekt "Smartes Hamsterrad"! Dieses Repository enthält alle no
 
 Das System erfasst die Aktivität des Hamsters über einen induktiven Sensor, verarbeitet die Daten auf einem **ESP32-C6** und sendet sie an **Home Assistant**. Dort wird ein detailliertes Dashboard inklusive eines "Reisetagebuchs" generiert.
 
-<img src="media/Home%20Assistant%20Dashboard.png" alt="Home Assistant Dashboard" width="600" />
+<img src="Media/Home%20Assistant%20Dashboard.png" alt="Home Assistant Dashboard" width="600" />
 
 ---
 
