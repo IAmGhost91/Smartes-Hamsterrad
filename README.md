@@ -134,7 +134,7 @@ Der Code für die Lovelace-Karte befindet sich in `Software/Home-Assistant-Dashb
     * `input_number.hamsterrad_distanz_taglich_rekord`
     * `input_number.hamsterrad_geschwindigkeit_rekord`
     * *...sowie die Sensoren, die von ESPHome bereitgestellt werden (`sensor.hamsterrad_distanz_taglich`, `sensor.hamsterrad_geschwindigkeit` usw.)*
-2.  **Lovelace-Karte:** Erstelle eine neue "Manuelle Karte" in deinem Dashboard und kopiere den Inhalt der `Karte Home Assistant Code.rtf` hinein.
+2.  **Lovelace-Karte:** Erstelle eine neue "Manuelle Karte" in deinem Dashboard und kopiere den Inhalt der `Home-Assistant-Dashboard-Code` hinein.
 3.  **Anpassung:** Passe die Kilometer-Marken und Orte im "locations"-Dictionary in der Markdown-Karte an deinen Wohnort an.
 
 ---
