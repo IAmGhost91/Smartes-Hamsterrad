@@ -105,7 +105,7 @@ sensor:
     name: "Umdrehungen Gesamt"
     id: umdrehungen_gesamt_sensor
     unit_of_measurement: 'U'
-    icon: "mdi:counter"
+    icon: "mdi:rotate-right"
     state_class: total_increasing
     update_interval: 10s
     lambda: |-
@@ -117,7 +117,7 @@ sensor:
     name: "U/min"
     id: hamsterrad_u_min_sensor
     unit_of_measurement: 'U/min' # Standard-Einheit für Umdrehungen/Minute
-    icon: "mdi:speedometer-slow"
+    icon: "mdi:rotate-3d-variant"
     state_class: measurement
     device_class: frequency # Semantisch korrekte Klasse für Frequenz
     update_interval: 10s     # Der Sensor hat jetzt seinen eigenen Taktgeber
@@ -137,6 +137,7 @@ sensor:
     name: "Distanz Gesamt"
     id: distanz_gesamt
     unit_of_measurement: 'km'
+    device_class: distance
     icon: "mdi:map-marker-distance"
     state_class: total_increasing
     update_interval: 10s
@@ -148,7 +149,8 @@ sensor:
   - platform: template
     name: "Geschwindigkeit"
     unit_of_measurement: 'km/h'
-    icon: "mdi:run"
+    device_class: speed
+    icon: "mdi:speedometer-slow"
     state_class: measurement
     update_interval: 10s
     lambda: |-
@@ -161,7 +163,8 @@ sensor:
     name: "Distanz Täglich"
     id: distanz_taglich
     unit_of_measurement: 'km'
-    icon: "mdi:calendar-today"
+    device_class: distance
+    icon: "mdi:arrow-left-right"
     state_class: total_increasing
     update_interval: 10s
     lambda: |-
@@ -172,8 +175,8 @@ sensor:
   - platform: template
     name: "Impulse Gesamt"
     id: impulse_gesamt
-    icon: "mdi:pulse"
-    unit_of_measurement: "Impulse"
+    unit_of_measurement: 'imp'
+    icon: "mdi:counter"
     state_class: total_increasing
     update_interval: 10s
     lambda: |-
