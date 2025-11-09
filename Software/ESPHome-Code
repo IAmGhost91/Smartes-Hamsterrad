@@ -194,6 +194,7 @@ text_sensor:
     name: "Hamsterrad Uhrzeit"
     id: hamsterrad_uhrzeit
     icon: "mdi:clock-check-outline"
+    internal: true
     # Aktualisiert sich alle 30 Sekunden
     update_interval: 30s 
     lambda: |-
